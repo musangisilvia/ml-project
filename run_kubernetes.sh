@@ -2,17 +2,14 @@
 
 # This tags and uploads an image to Docker Hub
 
-# Step 1:
 # This is your Docker ID/path
-# dockerpath=<>
+dockerpath=amekamnakinini/app:api
 
-# Step 2
 # Run the Docker Hub container with kubernetes
+kubectl create deploy app --image=$dockerpath
 
-
-# Step 3:
 # List kubernetes pods
+kubectl get pods
 
-# Step 4:
 # Forward the container port to a host
-
+kubectl port-forward pod/app-7c8f48b847-lxm9n --address 0.0.0.0 8000:80
