@@ -48,4 +48,16 @@ source .devops/bin/activate
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
-# ml-project
+
+### Output files
+#### docker_out.txt
+When you spawn a docker container and execute the make_prediction.sh script, you get output like the one contained in this file. 
+
+#### kubernetes_out.txt
+When you spawn a kubernetes pod and execute the make_prediction.sh script, you get output like the one contained in this file. 
+
+### Recommendations
+
+> You can adopt this prediction model in other areas and industries as you see fit. E.g. to predict vehicle prices based on conditions like country of origin and engine power. 
+
+# #AI
