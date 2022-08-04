@@ -28,13 +28,15 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Create a virtualenv with Python 3.7 and activate it. Refer to this link for help on specifying the Python version in the virtualenv. 
 ```bash
 python3 -m pip install --user virtualenv
-# You should have Python 3.7 available in your host. 
-# Check the Python path using `which python3`
-# Use a command similar to this one:
-python3 -m virtualenv --python=<path-to-Python3.7> .devops
-source .devops/bin/activate
+python3 -m virtualenv  ~/.devops
+source ~/.devops/bin/activate
 ```
 * Run `make install` to install the necessary dependencies
+* Install the latest minikube stable release on x86-64 linux 
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
 
 ### Running `app.py`
 
@@ -47,14 +49,45 @@ source .devops/bin/activate
 * Setup and Configure Docker locally
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
-* Run via kubectl
+* Run via kubectl or run minikube with ```minikube start```
 
 ### Output files
 #### docker_out.txt
 When you spawn a docker container and execute the make_prediction.sh script, you get output like the one contained in this file. 
 
 #### kubernetes_out.txt
-When you spawn a kubernetes pod and execute the make_prediction.sh script, you get output like the one contained in this file. 
+When you spawn a kubernetes pod and execute the make_prediction.sh script, you get output like the one contained in this file.
+
+### YAML Files
+#### config.yml
+For circleci workflow and jobs
+
+### Shell Scripts
+#### run_docker.sh
+To build and run docker image
+
+#### upload_docker.sh
+To upload image to docker hub
+
+#### run_kubernetes.sh
+To spin up a pod containing the prediction app using image from docker hub
+
+#### make_predictions.sh
+Test case to be predicted
+
+### Makefile
+Used to simplify the process of setting up the environment (creating a venv, installing dependancies etc)
+
+### Dockerfile
+Configuration for Docker - copy the app to the defined working directory.
+
+### Dependancy files
+#### requirements.txt
+Defines all the dependancies needed to run the app.
+
+### Main file
+#### app.py
+This contains the logic the app uses to make predictions.
 
 ### Recommendations
 
