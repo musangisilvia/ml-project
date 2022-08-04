@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![musangisilvia](https://circleci.com/gh/musangisilvia/ml-project.svg?style=svg)](https://app.circleci.com/pipelines/github/musangisilvia/ml-project/3/workflows/888db8b0-d3d3-4178-b456-a146866ed5ac)
 
 ## Project Overview
 
